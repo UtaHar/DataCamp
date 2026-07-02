@@ -24,6 +24,8 @@ summary_df = grouped_crops.agg(
     median_ph = ('ph','median'),
     mean_ph = ('ph','mean')
 )
+summary_df = summary_df.reset_index()
+summary_df
 
 # split dataset, train model, predict test set, evaluate model performance
 X = crops.drop('crop', axis=1).values
