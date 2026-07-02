@@ -13,6 +13,8 @@ print(crops.head())
 print(crops.info())
 print(crops.describe().T)
 crops['crop'].value_counts(normalize=True)
+grouped_crops = crops.groupby('crop')
+summary_df = grouped_crops.agg('N','mean')
 
 # split dataset, train model, predict test set, evaluate model performance
 X = crops.drop('crop', axis=1).values
