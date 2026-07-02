@@ -14,7 +14,16 @@ print(crops.info())
 print(crops.describe().T)
 crops['crop'].value_counts(normalize=True)
 grouped_crops = crops.groupby('crop')
-summary_df = grouped_crops.agg('N','mean')
+summary_df = grouped_crops.agg(
+    median_N = ('N','median'),
+    mean_N = ('N','mean'),
+    median_P = ('P','median'),
+    mean_P = ('P','mean'),
+    median_K = ('K','median'),
+    mean_K = ('K','mean'),
+    median_ph = ('ph','median'),
+    mean_ph = ('ph','mean')
+)
 
 # split dataset, train model, predict test set, evaluate model performance
 X = crops.drop('crop', axis=1).values
