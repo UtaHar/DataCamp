@@ -40,4 +40,3 @@ You have been supplied with the dataset netflix_data.csv, along with the followi
 | duration | Duration of the show in minutes |
 | description	| Description of the show |
 | genre |	Show genre |
-| - | - |
