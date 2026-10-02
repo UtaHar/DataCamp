@@ -36,6 +36,8 @@ largest_std_dev = (
         std_SAT=('total_SAT','std')
         )
     .round(2)
+    .sort_values(by='std_SAT', ascending=False)
+    .head(1)
 )
 
 largest_std_dev
